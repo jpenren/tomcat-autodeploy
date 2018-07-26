@@ -9,7 +9,7 @@ Copy war file to ./autodeploy dir to be deployed to tomcat1 and tomcat2 servers
 
 Note: use the same network that Tomcat instances running on Docker
 
-# Options
+# Environment variables
 
 AUTODEPLOY_DIR=Directory to watch for new files. Default: /autodeploy
 TOMCAT_USERNAME=Tomcat username with manager-script role. Default: tomcat
