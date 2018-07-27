@@ -28,7 +28,7 @@ function deploy {
 
 log "Watching [directory: $dir, tomcat-servers: $servers, username: $username]"
 
-while inotifywait -q -e create $dir;
+while inotifywait -q -e close $dir;
 do
   log "New file detected on $dir"
 
