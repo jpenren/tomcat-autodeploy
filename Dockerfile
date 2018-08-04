@@ -1,11 +1,13 @@
 FROM alpine:3.8
 
-RUN apk --no-cache add curl inotify-tools
+ENV TOMCAT_USERNAME=tomcat
+ENV TOMCAT_PASSWORD=s3cret
 
-COPY entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+RUN apk add --update --no-cache python curl
 
-ENTRYPOINT ["/entrypoint.sh"]
+ADD server.py /server.py
+
+ENTRYPOINT ["python", "/server.py"]
 
 # Default server name
 CMD ["tomcat"]
